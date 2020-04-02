@@ -4,8 +4,7 @@
 - Potential applications in GD, RadViz, DigitalARt, Sports projects
 - Gain experience with networking applications
 - I want to write more :)
-- Promised a friend 
-<br>\
+- Promised a friend when he was graduating I'll build this one day.
 
 ## [Problems/Applications]
 - Numerous applications students can use this generalized version for
