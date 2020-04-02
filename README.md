@@ -1,11 +1,11 @@
-[Why]
-AR has great applications
-No clear tutorials online on Hololens networking
-Potential applications in GD, RadViz, DigitalARt, Sports projects
-Gain experience with networking applications
-I want to write more :)
-Promised a friend 
-
+## [Why]
+- AR has great applications
+- No clear tutorials online on Hololens networking
+- Potential applications in GD, RadViz, DigitalARt, Sports projects
+- Gain experience with networking applications
+- I want to write more :)
+- Promised a friend 
+<br>
 [Problems/Applications]
 Numerous applications students can use this generalized version for
 Multiplayer gaming, education, industry training, etc.
@@ -19,6 +19,7 @@ Multiple two-way connections allowed
 Unity project for Hololens
 
 We can have a simple ball being moved by two players.
+
 [Personal Takeaway goals]
 Scalable server-client architecture 
 Hololens project
