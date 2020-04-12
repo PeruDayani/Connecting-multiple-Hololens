@@ -1,56 +1,72 @@
 #!/usr/bin/env python
 
-
-# telnet program example
 import socket, select, string, sys
 
-def prompt() :
+
+def ParseMessage(msg):
+	# Edit for your purpose
+	
+	# We print the msg for this tutorial
+	sys.stdout.write(msg)
+
+
+def RequestMessage() :
 	sys.stdout.write('<You> ')
 	sys.stdout.flush()
 
-#main function
 if __name__ == "__main__":
 	
-	if(len(sys.argv) < 3) :
-		print('Usage : python telnet.py hostname port')
-		sys.exit()
-	
-	host = sys.argv[1]
-	port = int(sys.argv[2])
-	
+	# Enter the server's IP and Port
+	host = '192.168.0.17'
+	port = 5000
+
+	# Boolean to keep the client running
+	runClient = True
+
+	# Create socket instance
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.settimeout(2)
 	
-	# connect to remote host
+	# Attempt to connect to server
 	try :
 		s.connect((host, port))
 	except :
 		print('Unable to connect')
 		sys.exit()
 	
-	print('Connected to remote host. Start sending messages')
-	prompt()
+	print('Successfully connected to remote host.')
+	RequestMessage()
 	
-	while 1:
+	while runClient:
+
+		# Moniter the user's input and the server
 		socket_list = [sys.stdin, s]
 		
-		# Get the list sockets which are readable
+		# Obtain list of readable sockets
 		read_sockets, write_sockets, error_sockets = select.select(socket_list , [], [])
 		
 		for sock in read_sockets:
-			#incoming message from remote server
+
+			# New messages from server
 			if sock == s:
-				data = sock.recv(4096)
+	
+				# Recieve message
+				data = sock.recv(4096).decode()
+	
 				if not data :
 					print('\nDisconnected from chat server')
 					sys.exit()
+	
 				else :
-					#print data
-					sys.stdout.write(data.decode())
-					prompt()
+					# Parse valid message
+					sys.stdout.write(data)
+					# ParseMessage(data.decode())
+					RequestMessage()
 			
-			#user entered a message
+			# Recieve message from user
 			else :
 				msg = sys.stdin.readline()
 				s.send(msg.encode())
-				prompt()
+				RequestMessage()
+
+	s.close()

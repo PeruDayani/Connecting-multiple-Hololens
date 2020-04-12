@@ -2,66 +2,86 @@
 
 import socket, select
 
+
 #Function to broadcast chat messages to all connected clients
-def broadcast_data (sock, message):
-	#Do not send the message to master socket and the client who has send us the message
+def ParseMessage (sock, msg):
+	# Edit for your purpose
+
+	# We broadcast the msg to all other clients for this tutorial
 	for socket in CONNECTION_LIST:
-		if socket != server_socket and socket != sock :
+
+		if socket != server and socket != sock :
 			try :
-				socket.send(message.encode())
+				socket.send(msg.encode())
 			except :
-				# broken socket connection may be, chat client pressed ctrl+c for example
+				# Assume client disconnected if it refused the message
 				socket.close()
 				CONNECTION_LIST.remove(socket)
+
 
 if __name__ == "__main__":
 	
 	# List to keep track of socket descriptors
 	CONNECTION_LIST = []
-	RECV_BUFFER = 4096 # Advisable to keep it as an exponent of 2
-	PORT = 5000
+	RECV_BUFFER = 4096 
 	
-	server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	# this has no effect, why ?
-	server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-	server_socket.bind(("0.0.0.0", PORT))
-	server_socket.listen(10)
+	# Enter the server's IP and Port
+	host = '192.168.0.17'
+	port = 5000
+
+	# Boolean to keep the server running
+	runServer = True
+	
+	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	server.bind((host, port))
+	server.listen(10)
+
+	print("Chat server started on port " + str(port))
 
 	# Add server socket to the list of readable connections
-	CONNECTION_LIST.append(server_socket)
+	CONNECTION_LIST.append(server)
 
-	print("Chat server started on port " + str(PORT))
 
-	while 1:
-		# Get the list sockets which are ready to be read through select
+	while runServer:
+
+		# Obtain list of readable sockets
 		read_sockets,write_sockets,error_sockets = select.select(CONNECTION_LIST,[],[])
 
 		for sock in read_sockets:
-			#New connection
-			if sock == server_socket:
-				# Handle the case in which there is a new connection recieved through server_socket
-				sockfd, addr = server_socket.accept()
-				CONNECTION_LIST.append(sockfd)
+
+			# New client request
+			if sock == server:
+
+				# Add new client
+				client, addr = server.accept()
+				CONNECTION_LIST.append(client)
 
 				print("Client (%s, %s) connected" % addr)
 				
-				broadcast_data(sockfd, "[%s:%s] entered room\n" % addr)
+				# broadcast_data(client, "[%s:%s] entered room\n" % addr)
 			
-			#Some incoming message from a client
+			# New message from a client
 			else:
-				# Data recieved from client, process it
+				
 				try:
-					#In Windows, sometimes when a TCP program closes abruptly,
-					# a "Connection reset by peer" exception will be thrown
+					# Recieve message
 					data = sock.recv(RECV_BUFFER).decode()
+
 					if data:
-						broadcast_data(sock, "\r" + '<' + str(sock.getpeername()) + '> ' + data)                
+						# Parse valid message
+						ParseMessage(sock, "\r" + '<' + str(sock.getpeername()) + '> | ' + data)                
 				
 				except:
+
+					# Assume client disconnected if they failed to send the meesage
+					
 					broadcast_data(sock, "Client (%s, %s) is offline" % addr)
 					print("Client (%s, %s) is offline" % addr)
+					
 					sock.close()
 					CONNECTION_LIST.remove(sock)
+
 					continue
 	
-	server_socket.close()
+	server.close()
