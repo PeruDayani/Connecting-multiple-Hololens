@@ -17,7 +17,7 @@ def RequestMessage() :
 if __name__ == "__main__":
 	
 	# Enter the server's IP and Port
-	host = 'x.x.x.x'
+	host = '192.168.0.17'
 	port = 5000
 
 	# Boolean to keep the client running

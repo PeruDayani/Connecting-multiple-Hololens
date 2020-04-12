@@ -26,7 +26,7 @@ if __name__ == "__main__":
 	RECV_BUFFER = 4096 
 	
 	# Enter the server's IP and Port
-	host = 'x.x.x.x'
+	host = '192.168.0.17'
 	port = 5000
 
 	# Boolean to keep the server running
@@ -58,9 +58,8 @@ if __name__ == "__main__":
 				CONNECTION_LIST.append(client)
 
 				print("Client (%s, %s) connected" % addr)
-				msg = "[%s:%s] entered room\n" % addr
 				
-				ParseMessage (client, msg)
+				# broadcast_data(client, "[%s:%s] entered room\n" % addr)
 			
 			# New message from a client
 			else:
