@@ -1,1 +1,1 @@
-An open sourced project to build AR applications utilizing 5G spatial computing.
+An open sourced project to build Hololens networking applications.
