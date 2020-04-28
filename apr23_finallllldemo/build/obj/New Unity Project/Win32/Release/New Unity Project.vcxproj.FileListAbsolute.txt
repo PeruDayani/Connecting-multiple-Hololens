@@ -1,0 +1,24 @@
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\bin\Win32\Release\resources.pri
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\bin\Win32\Release\AppxManifest.xml
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\bin\Win32\Release\New Unity Project.build.appxrecipe
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\New Unity Project.vcxprojAssemblyReference.cache
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\New Unity Project.vcxproj.CopyComplete
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\ResourceHandlingTask.state
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\New Unity Project.vcxproj.GenerateResource.Cache
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\priconfig.xml
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\priconfig.xml.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\unfiltered.layout.resfiles
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\unfiltered.layout.resfiles.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\filtered.layout.resfiles
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\filtered.layout.resfiles.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\excluded.layout.resfiles
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\excluded.layout.resfiles.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\resources.resfiles
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\resources.resfiles.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\pri.resfiles
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\pri.resfiles.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\qualifiers.txt
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\qualifiers.txt.intermediate
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\ProjectArchitectures.txt
+C:\Users\perud\Desktop\New Unity Project\apr23_finallllldemo\build\obj\New Unity Project\Win32\Release\.winmd_cache\$UnityPlayer.winmd_637037645720000000.json
