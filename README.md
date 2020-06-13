@@ -1,3 +1,5 @@
+<h3> Connecting HoloLens <h3>
+
 Student developers and amateur researchers such as myself are exploring the potential of applying these new AR technologies to various sectors and build the applications of the future. Inevitably at some point in this pipeline, we require to connect multiple AR devices to a central server to run our algorithms while planning for scalability and efficiency.
 <br>
 
